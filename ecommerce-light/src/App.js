@@ -1,23 +1,37 @@
-import logo from './logo.svg';
-import './App.css';
+import './ShopStyles.css';
+// import Public from './Routes/Public';
+// import MenuNavigation from './Components/MenuNavigation';
+import HeaderSlide from './Components/HeaderSlide';
+// import { 
+//   Routes,
+//   Route
+// } from 'react-router-dom';
+// import Footer from './Components/Footer';
+import React, {useState} from 'react';
+import AuthProvider from './Context/AuthProvider';
 
 function App() {
+
+  const [showSlide, setShowSlide] = useState(true);
+
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <AuthProvider>
+        <header className="App-header">    
+          {/* <MenuNavigation showSileSetter={setShowSlide} /> */}   
+          <p>La Navigation Bar estará aquí</p>     
+          <HeaderSlide show={showSlide} />     
+          Header
+        </header>
+        <div class="main-container">
+          {/* <Public /> */}
+          Public Container
+        </div>
+        <footer>
+          {/* <Footer /> */}
+          Footer
+        </footer>
+      </AuthProvider>
     </div>
   );
 }
