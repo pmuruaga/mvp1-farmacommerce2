@@ -5,8 +5,7 @@ import img2 from '../Assets/img/newimg2.jpg';
 import img3 from '../Assets/img/newimg3.jpg';
 
 function HeaderSlide(props){
-    const {show}=props;
-    console.log("Show: ",show);
+    const {show}=props;    
     return(
         <>  
             {

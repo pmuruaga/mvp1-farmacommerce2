@@ -1,6 +1,6 @@
 import './ShopStyles.css';
 // import Public from './Routes/Public';
-// import MenuNavigation from './Components/MenuNavigation';
+import MenuNavigation from './Components/MenuNavigation';
 import HeaderSlide from './Components/HeaderSlide';
 // import { 
 //   Routes,
@@ -14,16 +14,20 @@ function App() {
 
   const [showSlide, setShowSlide] = useState(true);
 
+  const toggleShowSlide = (show) => {
+    console.log("Seteando Estado desde App", show);    
+  };
+
   return (
     <div className="App">
       <AuthProvider>
         <header className="App-header">    
-          {/* <MenuNavigation showSileSetter={setShowSlide} /> */}   
-          <p>La Navigation Bar estará aquí</p>     
+          <MenuNavigation showSlideSetter={toggleShowSlide} />   
+          {/* <p>La Navigation Bar estará aquí</p>      */}
           <HeaderSlide show={showSlide} />     
           Header
         </header>
-        <div class="main-container">
+        <div className="main-container">
           {/* <Public /> */}
           Public Container
         </div>
